@@ -5,9 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Restaurant;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -39,6 +44,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:restaurant');
     }
 
     /**
@@ -47,13 +53,35 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function restaurantvalidator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:restaurants'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+    }
+
+    public function showRestaurantRegisterForm()
+    {
+        return view('auth.register', ['authgroup' => 'restaurant']);
+    }
+
+    public function registerRestaurant(Request $request)
+    {
+        $this->restaurantValidator($request->all())->validate();
+
+        event(new Registered($restaurant = $this->createRestaurant($request->all())));
+
+        Auth::guard('restaurant')->login($restaurant);
+
+        if ($response = $this->registeredRestaurant($request, $restaurant)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 201)
+                    : redirect(route('restaurant-home'));
     }
 
     /**
@@ -62,12 +90,16 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    protected function createRestaurant(array $data)
     {
-        return User::create([
+        return Restaurant::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    protected function registeredRestaurant(Request $request, $user)
+    {
+        //
     }
 }
