@@ -17,6 +17,13 @@ use Illuminate\Notifications\Notifiable;
 
 class Restaurant extends Authenticatable
 {
+    use HasFactory;
+
+    public function reservations()
+    {
+        return $this->hasMany('App\Models\Reservation');
+    }
+
     use HasFactory, Notifiable;
 
     protected $guard = 'restaurant';

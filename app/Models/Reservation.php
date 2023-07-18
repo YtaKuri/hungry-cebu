@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     use HasFactory;
+    public function Customer()
+    {
+        return $this->belongsTo('App\Models\Customer');
+    }
+
+    public function Restaurant()
+    {
+        return $this->belongsTo('App\Models\Restaurant');
+    }
 }
