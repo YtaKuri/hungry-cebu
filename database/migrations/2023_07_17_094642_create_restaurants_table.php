@@ -15,10 +15,6 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('reservations_id'); // reservationsテーブルのidカラムを参照する外部キー
-            $table->foreign('reservations_id')->references('id')->on('reservations');
-            $table->unsignedBigInteger('customers_id'); // customersテーブルのidカラムを参照する外部キー
-            $table->foreign('customers_id')->references('id')->on('customers');
             $table->string('facebook_id'); 
             $table->rememberToken(); // ユーザーを"記憶"するためのトークンを保存するカラム
             $table->string('email')->unique(); 
