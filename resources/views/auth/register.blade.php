@@ -5,11 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                {{-- <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                        @csrf --}}
+
+                        <div class="card-header">{{ isset($authgroup) ? ucwords($authgroup) : ""}} {{ __('Register') }}</div>
+
+                        <div class="card-body">
+                            @isset($authgroup)
+                            <form method="POST" action="{{ url("register/$authgroup") }}">
+                            @else
+                            <form method="POST" action="{{ route('register') }}">
+                            @endisset
+                                @csrf        
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
