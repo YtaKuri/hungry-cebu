@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRestaurantsTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateRestaurantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('restaurants', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->string('facebook_id'); 
-            $table->rememberToken(); // ユーザーを"記憶"するためのトークンを保存するカラム
+            $table->string('name'); 
             $table->string('email')->unique(); 
             $table->string('number'); // 電話番号などを保存する文字列型のカラム
             $table->string('address'); // 住所を保存する文字列型のカラム
             $table->string('password'); // パスワードを保存する文字列型のカラム
             $table->string('store_img');
+            $table->string('facebook_id');
+            $table->rememberToken(); // ユーザーを"記憶"するためのトークンを保存するカラム
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateRestaurantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('restaurants');
+        Schema::dropIfExists('admins');
     }
 }
