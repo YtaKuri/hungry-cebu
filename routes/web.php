@@ -32,4 +32,10 @@ Route::view('/restaurant', 'restaurant')->middleware('auth:restaurant')->name('r
 Route::get('/login/restaurant', [RestaurantController::class, 'showLoginForm'])->name('login.restaurant');
 Route::get('/register/restaurant', [RestaurantController::class, 'showRegistrationForm'])->name('register.restaurant');
 
+Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('posts.index');
 
+Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage');
+
+Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('posts.reserve');
+
+Route::get('/index/search ', 'App\Http\Controllers\IndexController@search')->name('posts.search');

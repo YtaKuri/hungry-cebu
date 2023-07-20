@@ -7,6 +7,6 @@
     <title>一覧画面</title>
 </head>
 <body>
-    
+
 </body>
 </html>
