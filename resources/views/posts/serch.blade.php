@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>検索画面</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/todolist.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/serch.css') }}">
 </head>
 <body>
     <header id="header">
@@ -18,7 +18,7 @@
 
     <main>
         <div class="content">
-            <div class="main-container">
+            <div class="header-container">
                 <nav class="serch-restaurant">
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="お店の名前を入力" aria-label="お店の名前を入力">
