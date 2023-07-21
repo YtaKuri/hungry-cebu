@@ -16,6 +16,7 @@ class IndexController extends Controller
     public function search()
     {
         return view('posts.search');
+        
     }
     
 }
