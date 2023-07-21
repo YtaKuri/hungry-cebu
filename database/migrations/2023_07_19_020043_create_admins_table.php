@@ -18,6 +18,7 @@ class CreateAdminsTable extends Migration
             $table->string('name'); 
             $table->string('email')->unique(); 
             $table->string('number'); // 電話番号などを保存する文字列型のカラム
+            $table->string('opening_hours');   
             $table->string('address'); // 住所を保存する文字列型のカラム
             $table->string('password'); // パスワードを保存する文字列型のカラム
             $table->string('store_img');
