@@ -28,7 +28,7 @@
     <main>
         <div class="main-container">
             <section class="restaurant">
-                <img class="restaurant-image" src="./image/restaurant.jpg">
+                <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
                 <h1 class="restaurant-title">レストランの名前</h1>
             </section>
         </div>

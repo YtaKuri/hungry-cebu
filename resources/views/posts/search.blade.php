@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>検索画面</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/serch.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/search.css') }}">
 </head>
 <body>
     <header id="header">
+        <div class="application-title">Hungry-Cebu</div>
         <div class="hamburger">
             <span></span>
             <span></span>
