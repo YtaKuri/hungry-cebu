@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,19 +26,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-// 顧客用の認証ルート
-Route::get('/user/login', [UserAuthController::class, 'showLoginForm'])->name('user.login');
-Route::post('/user/login', [UserAuthController::class, 'login']);
-Route::post('/user/logout', [UserAuthController::class, 'logout'])->name('user.logout');
-Route::get('/user/register', [UserAuthController::class, 'showRegistrationForm'])->name('user.register');
-Route::post('/user/register', [UserAuthController::class, 'register']);
+// // 顧客用の認証ルート
+// Route::get('/user/login', [UserAuthController::class, 'showLoginForm'])->name('user.login');
+// Route::post('/user/login', [UserAuthController::class, 'login']);
+// Route::post('/user/logout', [UserAuthController::class, 'logout'])->name('user.logout');
+// Route::get('/user/register', [UserAuthController::class, 'showRegistrationForm'])->name('user.register');
+// Route::post('/user/register', [UserAuthController::class, 'register']);
 
-// 管理者用の認証ルート
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login']);
-Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
-Route::get('/admin/register', [AdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
-Route::post('/admin/register', [AdminAuthController::class, 'register']);
+// // 管理者用の認証ルート
+// Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+// Route::post('/admin/login', [AdminAuthController::class, 'login']);
+// Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+// Route::get('/admin/register', [AdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
+// Route::post('/admin/register', [AdminAuthController::class, 'register']);
 
 // Route::get('/login/restaurant', [App\Http\Controllers\Auth\LoginController::class, 'showRestaurantLoginForm']);
 // Route::get('/register/restaurant', [App\Http\Controllers\Auth\RegisterController::class, 'showRestaurantRegisterForm']);
@@ -62,3 +63,14 @@ Route::get('/index/search ', 'App\Http\Controllers\IndexController@search')->nam
 
 
 
+
+// // ユーザーログインページの表示
+// Route::get('/login', [UserController::class, 'showLoginPage'])->name('user.login');
+
+// // ログイン処理の実行
+// Route::post('/login', [UserController::class, 'handleLogin']);
+
+
+// // routes/web.php
+
+// Route::post('/register', 'App\Http\Controllers\UserController@register')->name('user.registration');
