@@ -2,6 +2,7 @@
 
 return [
 
+    
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -46,6 +47,21 @@ return [
         ],
     ],
 
+
+    'guards' => [
+        // 現在のデフォルトのwebガード
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+    
+        // 新しいadminガード
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -74,6 +90,20 @@ return [
             'model' => App\Models\Restaurant::class,
         ],
 
+
+        'providers' => [
+            'users' => [
+                'driver' => 'eloquent',
+                'model' => App\Models\User::class,
+            ],
+        
+            // 新しいadminsプロバイダー
+            'admins' => [
+                'driver' => 'eloquent',
+                'model' => App\Models\Admin::class,
+            ],
+        ],
+        
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

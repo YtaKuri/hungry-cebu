@@ -5,21 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                {{-- <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
-                        @csrf --}}
-
-                        <div class="card-header">{{ isset($authgroup) ? ucwords($authgroup) : ""}} {{ __('Register') }}</div>
-
-                        <div class="card-body">
-                            @isset($authgroup)
-                            <form method="POST" action="{{ url("register/$authgroup") }}">
-                            @else
-                            <form method="POST" action="{{ route('register') }}">
-                            @endisset
-                                @csrf        
+                        @csrf
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
@@ -42,6 +32,20 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="number" class="col-md-4 col-form-label text-md-end">{{ __('Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number" type="text" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" required autocomplete="number">
+
+                                @error('number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
