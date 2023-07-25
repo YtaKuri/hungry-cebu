@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,7 +64,16 @@ Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('p
 Route::get('/index/search ', 'App\Http\Controllers\IndexController@search')->name('posts.search');
 
 
+// routes/web.php
 
+Route::get('/admin/register', [AdminRegisterController::class, 'showRegistrationForm'])->name('admin.register.form');
+Route::post('/admin/register', [AdminRegisterController::class, 'register'])->name('admin.register');
+// Route::get('/admin/register', 'AdminAuthController@showRegistrationForm')->name('admin.register.form');
+// Route::post('/admin/register', 'AdminAuthController@register')->name('admin.register');
+// Route::get('/admin/login', 'App\Http\Controllers\AdminAuthController@showLoginForm')->name('admin.login.form');
+// Route::post('/admin/login', 'App\Http\Controllers\AdminAuthController@login')->name('admin.login');
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login.form');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
 
 
 // // ユーザーログインページの表示

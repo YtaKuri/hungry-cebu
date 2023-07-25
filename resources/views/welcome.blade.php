@@ -15,7 +15,7 @@
           }
 
           .login-container {
-              border: 1px solid #ddd;
+              border: 1px solid #007bff;
               padding: 20px;
               margin-right: 10px;
               margin-bottom: 20px;
@@ -52,7 +52,7 @@
 
           .restaurant-description {
               font-size: 0.9rem;
-              color: #6c757d;
+              color: #007bff;
           }
 
           .restaurant-link {
@@ -61,18 +61,17 @@
           }
 
           body {
-          background-image: url('{{ asset('image/food-g8aabc964e_640.jpg') }}');
-          background-size: cover;
+          background-color: antiquewhite;
           background-position: center;
           background-repeat: no-repeat; 
           }
           
           h1 {
-          color: #ffffff;
+          color: #46aae1;
           margin: 24px;
           }
           h2 {
-          color: #ddd;
+          color: #007bff;
           }
           .row{
             transform: 
@@ -136,12 +135,12 @@
 
           function adminLogin() {
               // アドミンログインボタンがクリックされた時の処理
-              window.location.href = "admin_login.html"; // アドミンログインページへの遷移
+              window.location.href = "/admin/login"; // アドミンログインページへの遷移
           }
 
           function adminRegistration() {
               // アドミン新規登録ボタンがクリックされた時の処理
-              window.location.href = "admin_registration.html"; // アドミン新規登録ページへの遷移
+              window.location.href = "/admin/register"; // アドミン新規登録ページへの遷移
           }
       </script>
 

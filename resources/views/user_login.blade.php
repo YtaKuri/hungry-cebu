@@ -41,7 +41,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title text-center mb-4">Login</h1>
+                        <h1 class="card-title text-center mb-4">UserLogin</h1>
                         <form method="POST" action="{{ route('user.login') }}">
                             @csrf
                             <div class="mb-3">

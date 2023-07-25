@@ -1,57 +1,51 @@
 <?php
+// app/Http/Controllers/AdminAuthController.php
 
 namespace App\Http\Controllers\Auth;
 
-// use App\Http\Controllers\Controller;
-// use Illuminate\Http\Request;
-
-// class AdminAuthController extends Controller
-// {
-//     //
-// }
-
-// app/Http/Controllers/Auth/CustomerAuthController.php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 
 class AdminAuthController extends Controller
 {
-    // ログインフォームの表示
-    public function showLoginForm()
-    {
-        return view('auth.customer-login');
-    }
-
-    // ログイン処理
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::guard('customer')->attempt($credentials)) {
-            return redirect()->intended('/customer/dashboard');
-        }
-
-        return redirect()->route('customer.login')->with('error', 'ログイン情報が一致しません');
-    }
-
-    // ログアウト処理
-    public function logout()
-    {
-        Auth::guard('customer')->logout();
-        return redirect('/');
-    }
-
-    // 新規登録フォームの表示
     public function showRegistrationForm()
     {
-        return view('auth.customer-register');
+        return view('admin.login.form');
     }
 
-    // 新規登録処理
     public function register(Request $request)
     {
-        // 顧客の新規登録処理を実装する
+        // バリデーションなどの処理を行い、新しいAdminを作成してデータベースに保存するコードを追加
+        // 例:
+        // $admin = new \App\Models\Admin();
+        // $admin->name = $request->name;
+        // $admin->email = $request->email;
+        // $admin->password = bcrypt($request->password);
+        // $admin->number = $request->number;
+        // $admin->opening_hours = $request->opening_hours;
+        // $admin->address = $request->address;
+        // $admin->save();
+
+        // 登録後にAdminをログインさせるなどの適切なリダイレクト処理を行う
+
+        // return redirect('/admin/dashboard'); // 例: 登録後のダッシュボードへリダイレクト
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.admin_login');
+    }
+
+    public function login(Request $request)
+    {
+        // ログイン処理を行うコードを追加
+        // 例:
+        // $credentials = $request->only('email', 'password');
+        // if (Auth::guard('admin')->attempt($credentials)) {
+        //     return redirect('/admin/dashboard'); // ログイン成功後のダッシュボードへリダイレクト
+        // } else {
+        //     return back()->withErrors(['message' => 'ログインに失敗しました。']);
+        // }
     }
 }
