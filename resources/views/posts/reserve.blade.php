@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,47 +11,36 @@
     <link rel="stylesheet" href="{{ asset('css/reserve.css') }}">
 </head>
 <body>
-    <header id="header">
-        <div class="content">
-            <div class="header-container">
-                <nav class="serch-restaurant">
-                    <form class="d-flex">
-                        <input class="form-control" type="search" placeholder="お店の名前を入力" aria-label="お店の名前を入力">
-                    </form>
-                </nav>
-            </div>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-        </div>
-    </header>
+    
 
+    @section('content')
     <main>
         <div class="main-container">
             <section class="restaurant">
                 <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
-                <h1 class="restaurant-title">レストランの名前</h1>
+                <h1 class="restaurant-title" name=title>レストランの名前</h1>
             </section>
         </div>
         <div class="reserve-container">
-            <form>
+            <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
+                @csrf
                 <div class="reserve-form">
                     <label for="reservation-date">予約日</label>
-                    <input type="date" class="form-control" id="reservation-date" required>
+                    <input type="date" class="form-control" id="reservation-date" name="date" required>
                 </div>
                 <div class="reserve-form">
                     <label for="party-size">予約人数</label>
-                    <input type="number" class="form-control" id="party-size" placeholder="予約人数を入力してください" required>
+                    <input type="number" class="form-control" id="party-size" placeholder="予約人数を入力してください" name="people" required>
                 </div>
                 <div class="reserve-form">
                     <label for="reservation-time">予約時間</label>
-                    <input type="time" class="form-control" id="reservation-time" required>
+                    <input type="time" class="form-control" id="reservation-time" name="time" required>
                 </div>
                 <button type="submit" class="btn btn-primary">予約する</button>
             </form>
         </div>
     </main>
+    @endsection
 
 
 
