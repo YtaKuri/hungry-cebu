@@ -26,18 +26,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/login/restaurant', [App\Http\Controllers\Auth\LoginController::class, 'showRestaurantLoginForm']);
-Route::get('/register/restaurant', [App\Http\Controllers\Auth\RegisterController::class, 'showRestaurantRegisterForm']);
-
-Route::post('/login/restaurant', [App\Http\Controllers\Auth\LoginController::class, 'restaurantLogin']);
-Route::post('/register/restaurant', [App\Http\Controllers\Auth\RegisterController::class, 'registerRestaurant'])->name('restaurant-register');
-
-Route::view('/restaurant', 'restaurant')->middleware('auth:restaurant')->name('restaurant-home');
-Route::get('/login/restaurant', [RestaurantController::class, 'showLoginForm'])->name('login.restaurant');
-Route::get('/register/restaurant', [RestaurantController::class, 'showRegistrationForm'])->name('register.restaurant');
-
-
-
 Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('posts.index');
 
 Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage');
