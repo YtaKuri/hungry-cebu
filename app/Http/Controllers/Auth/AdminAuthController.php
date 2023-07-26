@@ -48,4 +48,8 @@ class AdminAuthController extends Controller
         //     return back()->withErrors(['message' => 'ログインに失敗しました。']);
         // }
     }
+    protected function redirectTo()
+    {
+        return '/reservation';
+    }
 }
