@@ -22,9 +22,10 @@
                     <div class="reserve-detail">予約日: {{ $reservation->date }}</div>
                     <div class="reserve-detail">予約人数: {{ $reservation->people }}</div>
                     <div class="reserve-detail">予約時間: {{ $reservation->time }}</div>
+                    <a href="{{ route('posts.edit', $resrevation->id) }}" class="btn btn-primary">編集</a>
                 </section>
-                @endforeach
-        <a href="{{ route('home', $reservation->id) }}"><button class="return-top">トップページに戻る</button></a>
+                @endforeach;
+        <button class="return-top"><a class="color-topbtn" href="{{ route('home') }}">トップページに戻る</a></button>
     </main>
     @endsection
 
