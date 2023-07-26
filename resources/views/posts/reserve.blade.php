@@ -12,7 +12,6 @@
 </head>
 <body>
     
-
     @section('content')
     <main>
         <div class="main-container">

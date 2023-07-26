@@ -113,3 +113,13 @@
     color: white;
     text-decoration: none;
 }
+
+.deletedit{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn-primary{
+    margin-left: 10px;
+}

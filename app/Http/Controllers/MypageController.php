@@ -11,7 +11,7 @@ class MypageController extends Controller
     //
     public function show()
     {
-        $reservations = Reservation::latest()->simplePaginate(4);
+        $reservations = Reservation::latest()->get();
         return view('posts.mypage', ['reservations'=>$reservations]);
     }
 
@@ -22,7 +22,14 @@ class MypageController extends Controller
 
     public function update(Request $request, $id)
     {
+        $reservation = Reservation::find($id);
+        $reservation -> date = $request -> date;
+        $reservation -> people = $request -> people;
+        $reservation -> time = $request -> time;
 
+        $reservation -> save();
+
+        return redirect()->route('posts.mypage',compact('reservation'));
     }
 
     public function destroy($id)
