@@ -19,4 +19,7 @@ class Reservation extends Model
     {
         return $this->belongsTo('App\Models\Admin');
     }
+    protected $fillable = ['reservation_date', 'name', 'email', 'note','number_of_people'];
+
+    protected $table = 'reservations';
 }
