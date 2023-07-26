@@ -11,35 +11,38 @@
     <link rel="stylesheet" href="{{ asset('css/reserve.css') }}">
 </head>
 <body>
-    
 
     @section('content')
-    <main>
-        <div class="main-container">
-            <section class="restaurant">
-                <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
-                <h1 class="restaurant-title" name=title>レストランの名前</h1>
-            </section>
-        </div>
-        <div class="reserve-container">
-            <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
-                @csrf
-                <div class="reserve-form">
-                    <label for="reservation-date">予約日</label>
-                    <input type="date" class="form-control" id="reservation-date" value="{{ $reservation->date }}" name="date" required>
-                </div>
-                <div class="reserve-form">
-                    <label for="party-size">予約人数</label>
-                    <input type="number" class="form-control" id="party-size" placeholder="予約人数を入力してください" value="{{ $reservation->people }}" name="people" required>
-                </div>
-                <div class="reserve-form">
-                    <label for="reservation-time">予約時間</label>
-                    <input type="time" class="form-control" id="reservation-time" value="{{ $reservation->time }}" name="time" required>
-                </div>
-                <button type="submit" class="btn btn-primary">予約する</button>
-            </form>
-        </div>
-    </main>
+    <form method="POST" action="{{ route('posts.update', $reservation->id) }}"method="POST">
+        @csrf
+        @method('put')
+        <main>
+            <div class="main-container">
+                <section class="restaurant">
+                    <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
+                    <h1 class="restaurant-title" name=title>レストランの名前</h1>
+                </section>
+            </div>
+            <div class="reserve-container">
+                <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
+                    @csrf
+                    <div class="reserve-form">
+                        <label for="reservation-date">予約日</label>
+                        <input type="date" class="form-control" id="reservation-date" value="{{ $reservation->date }}" name="date" required>
+                    </div>
+                    <div class="reserve-form">
+                        <label for="party-size">予約人数</label>
+                        <input type="number" class="form-control" id="party-size" placeholder="予約人数を入力してください" value="{{ $reservation->people }}" name="people" required>
+                    </div>
+                    <div class="reserve-form">
+                        <label for="reservation-time">予約時間</label>
+                        <input type="time" class="form-control" id="reservation-time" value="{{ $reservation->time }}" name="time" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">更新する</button>
+                </form>
+            </div>
+        </main>
+    </form>
     @endsection
 
 
