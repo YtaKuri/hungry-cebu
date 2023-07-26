@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +11,8 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 <body>
-    <header id="header">
-        <div class="content">
-            <div class="header-container">
-                <nav class="serch-restaurant">
-                    <form class="d-flex">
-                        <input class="form-control" type="search" placeholder="お店の名前を入力" aria-label="お店の名前を入力">
-                    </form>
-                </nav>
-            </div>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
+    
+    @section('content')
     <main>
         <div class="main-container">
             <section class="restaurant">
@@ -51,6 +39,7 @@
             </section>
         </div>
     </main>
+    @endsection
 
 
 

@@ -60,6 +60,14 @@ Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('p
 
 Route::get('/index/search ', 'App\Http\Controllers\IndexController@search')->name('posts.search');
 
+Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
+
+Route::get('/mypage/{id}/edit', 'MypageController@edit')->name('posts.edit');
+
+Route::put('/mypage/{id}', 'MypageController@update')->name('posts.update');
+
+Route::delete('/mypage/{id}','MypageController@destroy')->name('posts.destroy');
+
 
 
 

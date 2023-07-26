@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,47 +11,22 @@
     <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
 </head>
 <body>
-    <header id="header">
-        <div class="content">
-            <div class="header-container">
-                <nav class="serch-restaurant">
-                    <form class="d-flex">
-                        <input class="form-control" type="search" placeholder="お店の名前を入力" aria-label="お店の名前を入力">
-                    </form>
-                </nav>
-            </div>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
+    
+    @section('content')
     <main>
         <div class="main-container">
             <h1 class="mypage-title">ー 予約内容 ー</h1>
-            <section class="reservation-content">
-                <h2 class="restaurant-name">お店の名前1</h2>
-                <div class="reservation-detail">予約日: 2023年07月19日</div>
-                <div class="reservation-detail">予約人数: 3人</div>
-                <div class="reservation-detail">予約時間: 15:30</div>
-            </section>
-            <section class="reservation-content">
-                <h2 class="restaurant-name">お店の名前2</h2>
-                <div class="reservation-detail">予約日: 2023年07月20日</div>
-                <div class="reservation-detail">予約人数: 2人</div>
-                <div class="reservation-detail">予約時間: 18:00</div>
-            </section>
-            <section class="reservation-content">
-                <h2 class="restaurant-name">お店の名前3</h2>
-                <div class="reservation-detail">予約日: 2023年07月21日</div>
-                <div class="reservation-detail">予約人数: 4人</div>
-                <div class="reservation-detail">予約時間: 12:45</div>
-            </section>
-        </div>
-        <button class="return-top">トップページに戻る</button>
+                @foreach ($reservations as $reservation)
+                <section class="reservation-content">
+                    <h2 class="restaurant-name">レストランの名前</h2>
+                    <div class="reserve-detail">予約日: {{ $reservation->date }}</div>
+                    <div class="reserve-detail">予約人数: {{ $reservation->people }}</div>
+                    <div class="reserve-detail">予約時間: {{ $reservation->time }}</div>
+                </section>
+                @endforeach
+        <a href="{{ route('home', $reservation->id) }}"><button class="return-top">トップページに戻る</button></a>
     </main>
-
+    @endsection
 
 
 
