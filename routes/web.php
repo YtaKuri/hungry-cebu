@@ -65,11 +65,11 @@ Route::get('/index/search ', 'App\Http\Controllers\IndexController@search')->nam
 
 Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
 
-Route::get('/mypage/{id}/edit', 'MypageController@edit')->name('posts.edit');
+Route::get('/mypage/{id}/edit','App\Http\Controllers\MypageController@edit')->name('posts.edit');
 
-Route::put('/mypage/{id}', 'MypageController@update')->name('posts.update');
+Route::put('/mypage/{id}', 'App\Http\Controllers\MypageController@update')->name('posts.update');
 
-Route::delete('/mypage/{id}','MypageController@destroy')->name('posts.destroy');
+Route::delete('/mypage/{id}','App\Http\Controllers\MypageController@destroy')->name('posts.destroy');
 
 
 // routes/web.php

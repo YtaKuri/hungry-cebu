@@ -22,9 +22,16 @@
                     <div class="reserve-detail">予約日: {{ $reservation->date }}</div>
                     <div class="reserve-detail">予約人数: {{ $reservation->people }}</div>
                     <div class="reserve-detail">予約時間: {{ $reservation->time }}</div>
-                    <a href="{{ route('posts.edit', $resrevation->id) }}" class="btn btn-primary">編集</a>
+                    <div class="deletedit">
+                        <form action="{{ route('posts.destroy',$reservation->id) }}"method="post">
+                            @csrf
+                            @method('delete')
+                            <input type='submit' value="削除" class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
+                        </form>
+                        <a href="{{ route('posts.edit', $reservation->id) }}" class="btn btn-primary">編集</a>
+                    </div>
                 </section>
-                @endforeach;
+                @endforeach
         <button class="return-top"><a class="color-topbtn" href="{{ route('home') }}">トップページに戻る</a></button>
     </main>
     @endsection
