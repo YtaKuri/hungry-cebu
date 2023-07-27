@@ -19,4 +19,6 @@ class Reservation extends Model
     {
         return $this->belongsTo('App\Models\Admin');
     }
+    protected $fillable = ['name', 'date', 'people', 'user_id', 'admin_id'];
+
 }

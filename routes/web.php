@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReservationController;
 
 
 /*
@@ -94,3 +95,21 @@ Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.
 // // routes/web.php
 
 // Route::post('/register', 'App\Http\Controllers\UserController@register')->name('user.registration');
+
+// 予約一覧ページ
+Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
+
+// 予約追加ページ
+Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+
+// 予約保存
+Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
+
+// 予約詳細ページ
+Route::get('/reservations/id/{id}', [ReservationController::class, 'show'])->name('reservations.show');
+
+// 予約削除
+Route::delete('/reservations/{id}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
+
+// カレンダーの日付クリック時の予約詳細ページ
+Route::get('/reservations/date/{date}', [ReservationController::class, 'show'])->name('reservations.dateShow');
