@@ -13,10 +13,17 @@ class IndexController extends Controller
         return view('posts.index');
 
     }
+
     public function search()
     {
         return view('posts.search');
 
     }
 
+    // public function showAdminProfile($adiminId)
+    // {
+    // $admin = Admin::find($adminId);
+
+    // return view('admin.profile', compact('admin'));
+    // }
 }
