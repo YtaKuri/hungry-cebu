@@ -20,8 +20,9 @@ class ReservationController extends Controller
         // バリデーションのルールを設定する（必要に応じてカスタマイズ）
         $rules = [
             'name' => 'required|string',
-            'email' => 'required|email',
+            'number' => ['required', 'max:255', 'regex:/^[0-9]+$/'],
             'date' => 'required|date',
+            'time' => 'required|date_format:H:i',
             'people' => 'required|integer|min:1',
         ];
 
@@ -31,9 +32,11 @@ class ReservationController extends Controller
         // 予約を保存
         $reservation = new Reservation;
         $reservation->name = $validatedData['name'];
-        $reservation->email = $validatedData['email'];
+        $reservation->number = $validatedData['number'];
         $reservation->date = $validatedData['date'];
+        $reservation->time = $validatedData['time'];
         $reservation->people = $validatedData['people'];
+        // $reservation->admin_id = auth()->user()->id;
         $reservation->save();
 
         // 成功したら予約一覧ページにリダイレクト
@@ -43,8 +46,8 @@ class ReservationController extends Controller
     // 予約一覧ページを表示する
     public function index()
     {
-        $reservations = Reservation::all(); // すべての予約を取得
-
+        // $reservations = Reservation::all(); // すべての予約を取得
+        $reservations = Reservation::orderBy('date', 'asc')->get(); 
         return view('reservations.index', ['reservations' => $reservations]);
     }
     // 予約の詳細を表示する

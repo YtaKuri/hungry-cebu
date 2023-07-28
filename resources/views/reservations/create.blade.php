@@ -16,16 +16,21 @@
                 <input type="text" id="name" name="name" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
+                <label for="number">Number:</label>
+                <input type="text" id="number" name="number" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="reservation_date">Date:</label>
                 <input type="date" id="date" name="date" class="form-control" required>
             </div>
             <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
                 <label for="number_of_people">People:</label>
-                <input type="number" id="people" name="people" class="form-control" required>
+                <input type="number" id="people" name="people" class="form-control" min='0' required>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
