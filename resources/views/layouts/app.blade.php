@@ -65,6 +65,9 @@
                                         {{ __('Logout') }}
                                     </a>
                                     <li class="nav-link dropdown-toggle">
+                                        <a class="nav-link" href="{{ route('home') }}">{{ __('search page') }}</a>
+                                    </li>
+                                    <li class="nav-link dropdown-toggle">
                                         <a class="nav-link" href="{{ route('posts.mypage') }}">{{ __('my page') }}</a>
                                     </li>
 

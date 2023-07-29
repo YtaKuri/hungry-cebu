@@ -22,7 +22,7 @@ class ReserveController extends Controller
         $reservation -> date = $request -> date;
         $reservation -> people = $request -> people;
         $reservation -> time = $request -> time;
-        $reservation -> user_id = Auth::id();
+        $reservation -> user_id = Auth::user()->id;
 
         $reservation -> save();
 

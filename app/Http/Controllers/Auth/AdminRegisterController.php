@@ -1,15 +1,5 @@
 <?php
 
-// namespace App\Http\Controllers\Auth;
-
-// use App\Http\Controllers\Controller;
-// use Illuminate\Http\Request;
-
-// class AdminRegistrationController extends Controller
-// {
-//     //
-// }
-
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
@@ -33,11 +23,18 @@ class AdminRegisterController extends Controller
             'number' => 'required|string|max:255',
             'opening_hours' => 'required|string|max:255',
             'address' => 'required|string|max:255',
+            'store_img' => 'required|image',
             'password' => 'required|string|min:8|confirmed',
         ];
 
         // バリデーションを実行
         $request->validate($rules);
+
+        // 画像の保存先を指定
+        // $store_img = request()->file('store_img')->getClientOriginalName();
+        // request()->file('store_img')->storeAs('public/images', $store_img);
+
+        $path = $request->file('store_img')->store('public/images');
 
         // Adminをデータベースに保存
         $admin = new Admin();
@@ -47,9 +44,7 @@ class AdminRegisterController extends Controller
         $admin->opening_hours = $request->opening_hours;
         $admin->address = $request->address;
         $admin->password = bcrypt($request->password);
-        // 必要に応じて他のフィールドも追加
-        // $admin->store_img = $request->store_img;
-        // $admin->facebook_id = $request->facebook_id;
+        $admin->store_img = $path;
         $admin->save();
     }
 

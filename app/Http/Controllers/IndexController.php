@@ -2,28 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
-    //
-
-    public function index()
+        public function index()
     {
-        return view('posts.index');
+        // 複数の予約情報を取得
+        $admins = Admin::all();
 
+        return view('posts.index', ['admins' => $admins]);
     }
 
-    public function search()
+        public function show($id)
     {
-        return view('posts.search');
+        // 特定の予約情報を取得
+        $admin = Admin::find($id);
 
+        return view('posts.show', ['admin' => $admin]);
     }
-
-    // public function showAdminProfile($adiminId)
-    // {
-    // $admin = Admin::find($adminId);
-
-    // return view('admin.profile', compact('admin'));
-    // }
 }
