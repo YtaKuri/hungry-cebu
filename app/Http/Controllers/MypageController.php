@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class MypageController extends Controller
 {
     //
-    public function show()
+    public function show(Request $request)
     {
         $reservations = Reservation::latest()->get();
         return view('posts.mypage', ['reservations'=>$reservations]);
