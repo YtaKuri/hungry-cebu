@@ -57,15 +57,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('posts.index');
 
-// Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('posts.store');
-
 Route::get('/index/{id}', 'App\Http\Controllers\IndexController@show')->name('posts.show');
 
-Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage');
+Route::get('/index', 'App\Http\Controllers\ReserveController@index')->name('posts.index');
+
+Route::get('/index/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
 
 Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('posts.reserve');
 
 Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
+
+Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage');
 
 Route::get('/mypage/{id}/edit','App\Http\Controllers\MypageController@edit')->name('posts.edit');
 

@@ -7,6 +7,21 @@ use App\Models\Reservation;
 
 class ReservationController extends Controller
 {
+    public function index()
+    {
+        // 複数の予約情報を取得
+        $admins = Admin::all();
+
+        return view('posts.index', ['admins' => $admins]);
+    }
+
+        public function show($id)
+    {
+        // 特定の予約情報を取得
+        $admin = Admin::find($id);
+
+        return view('posts.show', ['admin' => $admin]);
+    }
    
     // 予約作成ページを表示する
     public function create()
@@ -36,7 +51,7 @@ class ReservationController extends Controller
         $reservation->date = $validatedData['date'];
         $reservation->time = $validatedData['time'];
         $reservation->people = $validatedData['people'];
-        // $reservation->admin_id = auth()->user()->id;
+
         $reservation->save();
 
         // 成功したら予約一覧ページにリダイレクト

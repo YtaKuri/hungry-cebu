@@ -13,6 +13,7 @@
 <body>
     @section('content')
     @foreach ($admins as $admin)
+    <a href="{{ route('posts.reserve') }}">
     <main>
         <div class="main-container">
             <section class="restaurant">
@@ -26,6 +27,7 @@
             </section>
         </div>
     </main>
+    </a>
     @endforeach
     @endsection
 

@@ -16,8 +16,8 @@
     <main>
         <div class="main-container">
             <section class="restaurant">
-                <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
-                <h1 class="restaurant-title" name=title>レストランの名前</h1>
+                <img class="restaurant-image" src="{{ asset('storage/' . str_replace('public/', '', $admin->store_img)) }}">
+                <h1 class="restaurant-title" name=title>{{ $admin->name }}</h1>
             </section>
         </div>
         <div class="reserve-container">
