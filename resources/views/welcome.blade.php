@@ -9,6 +9,8 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
       <link rel="stylesheet" href="{{ asset('css/index.css') }}">
       <style>
+
+        
           body {
               background-color: #f8f9fa;
               font-family: Arial, sans-serif;
@@ -61,9 +63,11 @@
           }
 
           body {
-          background-color: antiquewhite;
-          background-position: center;
-          background-repeat: no-repeat; 
+            background-image:url("image/serch-view2.jpg");
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            background-position: center;
+            background-size: cover;
           }
           
           h1 {

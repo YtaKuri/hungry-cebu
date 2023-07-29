@@ -15,26 +15,26 @@
     @section('content')
     <main>
         <div class="main-container">
-            <h1 class="mypage-title">ー 予約内容 ー</h1>
+            <h1 class="mypage-title">ー Reservation details ー </h1>
                 @foreach ($reservations as $reservation)
                 {{-- @if ($reservation->user_id == Auth::user->id) --}}
                 <section class="reservation-content">
-                    <h2 class="restaurant-name">レストランの名前</h2>
-                    <div class="reserve-detail">予約日: {{ $reservation->date }}</div>
-                    <div class="reserve-detail">予約人数: {{ $reservation->people }}</div>
-                    <div class="reserve-detail">予約時間: {{ $reservation->time }}</div>
+                    <h2 class="restaurant-name">Restaurant name</h2>
+                    <div class="reserve-detail">Reservation date: {{ $reservation->date }}</div>
+                    <div class="reserve-detail">persons: {{ $reservation->people }}</div>
+                    <div class="reserve-detail">Reservation time: {{ $reservation->time }}</div>
                     <div class="deletedit">
                         <form action="{{ route('posts.destroy',$reservation->id) }}"method="post">
                             @csrf
                             @method('delete')
-                            <input type='submit' value="削除" class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
+                            <input type='submit' value="delete" class="btn btn-danger" onclick='return confirm("Really delete?");'>
                         </form>
-                        <a href="{{ route('posts.edit', $reservation->id) }}" class="btn btn-primary">編集</a>
+                        <a href="{{ route('posts.edit', $reservation->id) }}" class="btn btn-primary">Edit</a>
                     </div>
                 </section>
                 {{-- @endif --}}
                 @endforeach
-        <button class="return-top"><a class="color-topbtn" href="{{ route('home') }}">トップページに戻る</a></button>
+        <button class="return-top"><a class="color-topbtn" href="{{ route('home') }}">Top page</a></button>
     </main>
     @endsection
 

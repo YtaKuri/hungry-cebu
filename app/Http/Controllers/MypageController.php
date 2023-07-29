@@ -9,11 +9,22 @@ use Illuminate\Support\Facades\Auth;
 class MypageController extends Controller
 {
     //
-    public function show(Request $request)
+
+    public function __construct()
     {
-        $reservations = Reservation::latest()->get();
-        return view('posts.mypage', ['reservations'=>$reservations]);
+        $this->middleware('auth'); // ユーザーがログインしていることを確認
     }
+
+    public function show()
+    {
+        $user = Auth::user();
+        $reservations = Reservation::where('user_id', $user->id)->latest()->get();
+        return view('posts.mypage', ['reservations' => $reservations]);
+        // $reservations = Reservation::latest()->get();
+        // return view('posts.mypage', ['reservations'=>$reservations]);
+    }
+
+    
 
     public function edit($id){
         $reservation = Reservation::find($id);
@@ -39,4 +50,10 @@ class MypageController extends Controller
 
         return redirect()->route('posts.mypage');
     }
+    
+    public function index()
+    {
+        return view('mypage');
+    }
+
 }
