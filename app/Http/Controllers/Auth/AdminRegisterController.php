@@ -46,6 +46,15 @@ class AdminRegisterController extends Controller
         $admin->password = bcrypt($request->password);
         $admin->store_img = $path;
         $admin->save();
+
+        if ($admin->save()) {
+            // 新しいページへのルート名を指定してリダイレクト
+            return redirect()->route('reservations.index');
+        } else {
+            // データベース保存が失敗した場合は、エラー処理などを行う
+            // 例えばエラーメッセージをフラッシュデータとして保存してリダイレクトする
+            return redirect()->back()->with('error', 'データベースの保存に失敗しました。');
+        }
     }
 
 }

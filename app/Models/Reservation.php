@@ -14,6 +14,7 @@ class Reservation extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
     }
 
     public function admin()
@@ -22,8 +23,4 @@ class Reservation extends Model
     }
     protected $fillable = ['name', 'date', 'people', 'user_id', 'admin_id'];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }
