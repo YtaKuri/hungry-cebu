@@ -7,7 +7,6 @@ use App\Models\Reservation;
 
 class ReservationController extends Controller
 {
-   
     // 予約作成ページを表示する
     public function create()
     {
@@ -36,7 +35,7 @@ class ReservationController extends Controller
         $reservation->date = $validatedData['date'];
         $reservation->time = $validatedData['time'];
         $reservation->people = $validatedData['people'];
-        // $reservation->admin_id = auth()->user()->id;
+
         $reservation->save();
 
         // 成功したら予約一覧ページにリダイレクト

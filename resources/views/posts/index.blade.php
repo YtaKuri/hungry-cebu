@@ -11,34 +11,24 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 <body>
-    
     @section('content')
+    @foreach ($admins as $admin)
+    <a href="{{ route('posts.reserve') }}">
     <main>
         <div class="main-container">
             <section class="restaurant">
-                <h1 class="restaurant-title">レストランの名前</h1>
-                <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
-            </section>
-        </div>
-        <div class="main-container">
-            <section class="restaurant-name">
-                <h1 class="restaurant-title">レストランの名前</h1>
-                <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
-            </section>
-        </div>
-        <div class="main-container">
-            <section class="restaurant-name">
-                <h1 class="restaurant-title">レストランの名前</h1>
-                <img class="restaurant-image" src="{{ asset('image/restaurant.jpg') }}">
-            </section>
-        </div>
-        <div class="main-container">
-            <section class="restaurant-name">
-                <h1 class="restaurant-title">レストランの名前</h1>
-                <img class="restaurant-image" src="./image/restaurant.jpg">
+                <h1 class="restaurant-title">{{ $admin->name }}</h1>
+                {{-- 間違いの記述 --}}
+                {{-- <img class="restaurant-image" src="{{ asset('storage/images/' . $admin->store_img) }}"> --}}
+                {{-- 正しい記述 --}}
+                <img class="restaurant-image" src="{{ asset('storage/' . str_replace('public/', '', $admin->store_img)) }}">
+                {{-- パスの確認 --}}
+                {{-- {{ $admin->store_img }} --}}
             </section>
         </div>
     </main>
+    </a>
+    @endforeach
     @endsection
 
 
