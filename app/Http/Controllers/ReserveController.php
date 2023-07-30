@@ -18,13 +18,13 @@ class ReserveController extends Controller
     //     return view('posts.reserve', ['admins' => $admins]);
     // }
 
-    //     public function show($id)
-    // {
-    //     // 特定の予約情報を取得
-    //     $admin = Admin::find($id);
+        public function show($id)
+    {
+        // 特定の予約情報を取得
+        $admin = Admin::find($id);
 
-    //     return view('posts.reserve', ['admin' => $admin]);
-    // }
+        return view('posts.reserve', ['admin' => $admin]);
+    }
 
     // 予約情報を作成＆保存
     public function create()

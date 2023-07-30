@@ -63,7 +63,7 @@ Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('p
 
 // Route::get('/index', 'App\Http\Controllers\ReseerveController@index')->name('posts.index');
 
-// Route::get('/reserve/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
+Route::get('/reserve/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
 
 Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
 
