@@ -30,10 +30,7 @@ class AdminRegisterController extends Controller
         // バリデーションを実行
         $request->validate($rules);
 
-        // 画像の保存先を指定
-        // $store_img = request()->file('store_img')->getClientOriginalName();
-        // request()->file('store_img')->storeAs('public/images', $store_img);
-
+        // 画像をimagesに保存
         $path = $request->file('store_img')->store('public/images');
 
         // Adminをデータベースに保存

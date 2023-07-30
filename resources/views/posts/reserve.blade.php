@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="{{ asset('css/reserve.css') }}">
 </head>
 <body>
-    
+
     @section('content')
     <main>
         <div class="main-container">
             <section class="restaurant">
                 <img class="restaurant-image" src="{{ asset('storage/' . str_replace('public/', '', $admin->store_img)) }}">
-                <h1 class="restaurant-title" name=title>{{ $admin->name }}</h1>
+                <h1 class="restaurant-title">{{ $admin->name }}</h1>
             </section>
         </div>
         <div class="reserve-container">

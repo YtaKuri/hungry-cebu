@@ -13,7 +13,7 @@
 <body>
     @section('content')
     @foreach ($admins as $admin)
-    <a href="{{ route('posts.reserve') }}">
+    <a href="{{ route('posts.reserve', [$admin->id]) }}">
     <main>
         <div class="main-container">
             <section class="restaurant">
