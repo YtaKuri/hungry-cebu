@@ -59,11 +59,11 @@ Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('posts.
 
 Route::get('/index/{id}', 'App\Http\Controllers\IndexController@show')->name('posts.show');
 
-Route::get('/reserve', 'App\Http\Controllers\ReserveController@index')->name('posts.index');
+Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('posts.create');
 
-Route::get('/reserve/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
+// Route::get('/index', 'App\Http\Controllers\ReseerveController@index')->name('posts.index');
 
-Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('posts.reserve');
+// Route::get('/reserve/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
 
 Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
 
