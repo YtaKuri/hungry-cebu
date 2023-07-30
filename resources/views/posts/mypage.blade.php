@@ -17,7 +17,6 @@
         <div class="main-container">
             <h1 class="mypage-title">ー 予約内容 ー</h1>
                 @foreach ($reservations as $reservation)
-                {{-- @if ($reservation->user_id == Auth::user->id) --}}
                 <section class="reservation-content">
                     <h2 class="restaurant-name">レストランの名前</h2>
                     <div class="reserve-detail">予約日: {{ $reservation->date }}</div>
@@ -32,7 +31,6 @@
                         <a href="{{ route('posts.edit', $reservation->id) }}" class="btn btn-primary">編集</a>
                     </div>
                 </section>
-                {{-- @endif --}}
                 @endforeach
         <button class="return-top"><a class="color-topbtn" href="{{ route('home') }}">トップページに戻る</a></button>
     </main>

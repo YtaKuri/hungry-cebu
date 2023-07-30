@@ -61,8 +61,6 @@ Route::get('/index/{id}', 'App\Http\Controllers\IndexController@show')->name('po
 
 Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('posts.create');
 
-// Route::get('/index', 'App\Http\Controllers\ReseerveController@index')->name('posts.index');
-
 Route::get('/reserve/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
 
 Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
