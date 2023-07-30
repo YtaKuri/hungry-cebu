@@ -9,16 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ReserveController extends Controller
 {
-    // indexページからのデータを受け取って、reserveページにそのデータを返す
-    // public function index()
-    // {
-    //     // 複数の予約情報を取得
-    //     $admins = Admin::all();
-
-    //     return view('posts.reserve', ['admins' => $admins]);
-    // }
-
-        public function show($id)
+    public function show($id)
     {
         // 特定の予約情報を取得
         $admin = Admin::find($id);
