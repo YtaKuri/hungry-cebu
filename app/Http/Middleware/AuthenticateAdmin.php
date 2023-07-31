@@ -10,7 +10,7 @@ class AuthenticateAdmin
 {
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check()) {
+        if (Auth::guard('admin')->check()) {
             // ユーザーがログインしている場合は、リクエストを次のミドルウェアに進める
             return $next($request);
         } else {

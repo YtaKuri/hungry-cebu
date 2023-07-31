@@ -73,7 +73,7 @@ Route::get('/reservations/id/{id}', [ReservationController::class, 'show'])->nam
 // 予約削除
 Route::delete('/reservations/{id}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 
-Route::get('/your-route', 'YourController@yourMethod')->middleware('auth:admin');
+// Route::get('/your-route', 'YourController@yourMethod')->middleware('auth:admin');
 
 Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
@@ -108,7 +108,7 @@ Route::middleware([AuthenticateUser::class])->group(function () {
 Route::middleware([AuthenticateAdmin::class])->group(function () {
 
     // 予約一覧ページ
-    Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
+    // Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
     // 予約追加ページ
     Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
@@ -122,7 +122,7 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     // 予約削除
     Route::delete('/reservations/{id}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 
-    Route::get('/your-route', 'YourController@yourMethod')->middleware('auth:admin');
+    // Route::get('/your-route', 'YourController@yourMethod')->middleware('auth:admin');
 
     Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
