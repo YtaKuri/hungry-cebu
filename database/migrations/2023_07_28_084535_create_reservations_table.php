@@ -19,6 +19,7 @@ class CreateReservationsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('admin_id');
             $table->foreign('admin_id')->references('id')->on('admins');
+            $table->text('name');
             $table->date('date');
             $table->time('time');
             $table->integer('people');

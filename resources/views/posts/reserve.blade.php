@@ -23,6 +23,7 @@
         <div class="reserve-container">
             <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="admin_name" value="{{ $admin->name }}">
                 <div class="reserve-form">
                     <label for="reservation-date">Reservation Date</label>
                     <input type="date" class="form-control" id="reservation-date" name="date" required>
