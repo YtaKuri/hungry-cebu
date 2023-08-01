@@ -30,6 +30,7 @@ class ReserveController extends Controller
     $people = $request->people;
     $time = $request->time;
     $adminName = $request->admin_name; // $admin->nameを取得
+    $adminId = $request->admin_id; // レストランのIDを取得
 
     // ログインしているユーザーのIDを取得
     $userId = Auth::user()->id;
@@ -41,6 +42,7 @@ class ReserveController extends Controller
     $reservation->time = $time;
     $reservation->user_id = $userId;
     $reservation->name = $adminName; // $admin->nameを保存
+    $reservation->admin_id = $adminId; // レストランのIDを保存
 
     $reservation->save();
 
