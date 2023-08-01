@@ -36,6 +36,7 @@
                     <label for="reservation-time">Reservation Time</label>
                     <input type="time" class="form-control" id="reservation-time" name="time" required>
                 </div>
+                <input type="hidden" name="admin_id" value="{{ $admin->id }}">
                 <button type="submit" class="btn btn-primary">Reserve</button>
             </form>
         </div>
