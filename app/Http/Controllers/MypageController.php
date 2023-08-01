@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,15 +21,6 @@ class MypageController extends Controller
         $user = Auth::user();
         $reservations = Reservation::where('user_id', $user->id)->latest()->get();
         return view('posts.mypage', ['reservations' => $reservations]);
-        // $reservations = Reservation::latest()->get();
-        // return view('posts.mypage', ['reservations'=>$reservations]);
-    }
-
-    
-
-    public function edit($id){
-        $reservation = Reservation::find($id);
-        return view('posts.edit',['reservation'=>$reservation]);
     }
 
     public function update(Request $request, $id)
@@ -50,10 +42,4 @@ class MypageController extends Controller
 
         return redirect()->route('posts.mypage');
     }
-    
-    public function index()
-    {
-        return view('mypage');
-    }
-
 }

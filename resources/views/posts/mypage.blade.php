@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
 </head>
 <body>
-    
+
     @section('content')
     <main>
         <div class="main-container">
             <h1 class="mypage-title">ー Reservation details ー </h1>
                 @foreach ($reservations as $reservation)
                 <section class="reservation-content">
-                    <h2 class="restaurant-name">Restaurant name</h2>
+                    <h2 class="restaurant-name">{{ $reservation->name }}</h2>
                     <div class="reserve-detail">Reservation date: {{ $reservation->date }}</div>
                     <div class="reserve-detail">persons: {{ $reservation->people }}</div>
                     <div class="reserve-detail">Reservation time: {{ $reservation->time }}</div>

@@ -31,22 +31,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('posts.index');
-
-Route::get('/index/{id}', 'App\Http\Controllers\IndexController@show')->name('posts.show');
+Route::get('/index/{id}', 'App\Http\Controllers\IndexController@show')->name('posts.index.show');
 
 Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('posts.create');
-
+Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
 Route::get('/reserve/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
 
-Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
+// Route::get('/mypage', 'App\Http\Controllers\MypageController@index')->name('posts.mypage');
+Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage.show');
+Route::get('/mypage/{id}/edit', 'App\Http\Controllers\MypageController@edit')->name('posts.mypage.edit');
+Route::put('/mypage/{id}', 'App\Http\Controllers\MypageController@update')->name('posts.mypage.update');
+Route::delete('/mypage/{id}', 'App\Http\Controllers\MypageController@destroy')->name('posts.mypage.destroy');
 
-Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage');
-
-Route::get('/mypage/{id}/edit','App\Http\Controllers\MypageController@edit')->name('posts.edit');
-
-Route::put('/mypage/{id}', 'App\Http\Controllers\MypageController@update')->name('posts.update');
-
-Route::delete('/mypage/{id}','App\Http\Controllers\MypageController@destroy')->name('posts.destroy');
 
 
 // routes/web.php

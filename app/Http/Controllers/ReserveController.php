@@ -25,14 +25,25 @@ class ReserveController extends Controller
 
     public function store(Request $request)
     {
-        $reservation = new Reservation();
-        $reservation -> date = $request -> date;
-        $reservation -> people = $request -> people;
-        $reservation -> time = $request -> time;
-        $reservation -> user_id = Auth::user()->id;
+    // リクエストからデータを取得
+    $date = $request->date;
+    $people = $request->people;
+    $time = $request->time;
+    $adminName = $request->admin_name; // $admin->nameを取得
 
-        $reservation -> save();
+    // ログインしているユーザーのIDを取得
+    $userId = Auth::user()->id;
 
-        return redirect()->route('posts.mypage');
+    // Reservationモデルにデータを保存
+    $reservation = new Reservation();
+    $reservation->date = $date;
+    $reservation->people = $people;
+    $reservation->time = $time;
+    $reservation->user_id = $userId;
+    $reservation->name = $adminName; // $admin->nameを保存
+
+    $reservation->save();
+
+    return redirect()->route('posts.mypage');
     }
 }
