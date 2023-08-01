@@ -67,9 +67,9 @@ Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('p
 
 Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage');
 
-Route::get('/mypage/{id}/edit','App\Http\Controllers\MypageController@edit')->name('posts.edit');
+// Route::get('/mypage', 'App\Http\Controllers\MypageController@index')->name('posts.separateMypage');
 
-Route::put('/mypage/{id}', 'App\Http\Controllers\MypageController@update')->name('posts.update');
+Route::get('/mypage/{id}', 'App\Http\Controllers\MypageController@show')->name('posts.showMypage');
 
 Route::delete('/mypage/{id}','App\Http\Controllers\MypageController@destroy')->name('posts.destroy');
 

@@ -16,23 +16,23 @@
     <main>
         <div class="main-container">
             <h1 class="mypage-title">ー Reservation details ー </h1>
-                @foreach ($reservations as $reservation)
-                <section class="reservation-content">
-                    <h2 class="restaurant-name">Restaurant name</h2>
-                    <div class="reserve-detail">Reservation date: {{ $reservation->date }}</div>
-                    <div class="reserve-detail">persons: {{ $reservation->people }}</div>
-                    <div class="reserve-detail">Reservation time: {{ $reservation->time }}</div>
-                    <div class="deletedit">
-                        <form action="{{ route('posts.destroy',$reservation->id) }}"method="post">
-                            @csrf
-                            @method('delete')
-                            <input type='submit' value="delete" class="btn btn-danger" onclick='return confirm("Really delete?");'>
-                        </form>
-                        <a href="{{ route('posts.edit', $reservation->id) }}" class="btn btn-primary">Edit</a>
-                    </div>
-                </section>
-                @endforeach
-        <button class="return-top"><a class="color-topbtn" href="{{ route('home') }}">Top page</a></button>
+            @foreach ($reservations as $reservation)
+            <section class="reservation-content">
+                <h2 class="restaurant-name">{{ $admin->name }}</h2>
+                <div class="reserve-detail">Reservation date: {{ $reservation->date }}</div>
+                <div class="reserve-detail">persons: {{ $reservation->people }}</div>
+                <div class="reserve-detail">Reservation time: {{ $reservation->time }}</div>
+                <div class="deletedit">
+                    <form action="{{ route('posts.destroy', ['id' => $reservation->id]) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" value="delete" class="btn btn-danger" onclick='return confirm("Really delete?");'>
+                    </form>
+                </div>
+            </section>
+            @endforeach
+            <a class="color-topbtn" href="{{ route('home') }}"><button class="return-top">Top page</button></a>
+        </div>
     </main>
     @endsection
 

@@ -25,14 +25,15 @@ class ReserveController extends Controller
 
     public function store(Request $request)
     {
-        $reservation = new Reservation();
-        $reservation -> date = $request -> date;
-        $reservation -> people = $request -> people;
-        $reservation -> time = $request -> time;
-        $reservation -> user_id = Auth::user()->id;
+    $reservation = new Reservation();
+    $reservation->date = $request->date;
+    $reservation->people = $request->people;
+    $reservation->time = $request->time;
+    $reservation->user_id = Auth::user()->id;
 
-        $reservation -> save();
+    $reservation->save();
 
-        return redirect()->route('posts.mypage');
+    return redirect()->route('posts.mypage');
     }
+
 }

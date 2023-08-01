@@ -20,9 +20,9 @@
                 <h1 class="restaurant-title">{{ $admin->name }}</h1>
             </section>
         </div>
-        <div class="reserve-container">
-            <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
-                @csrf
+        <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
+            @csrf
+            <div class="reserve-container">
                 <div class="reserve-form">
                     <label for="reservation-date">予約日</label>
                     <input type="date" class="form-control" id="reservation-date" name="date" required>
@@ -36,9 +36,24 @@
                     <input type="time" class="form-control" id="reservation-time" name="time" required>
                 </div>
                 <button type="submit" class="btn btn-primary">予約する</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </main>
+    {{-- <script>
+        function redirectToAdminPage() {
+            // 予約するボタンが押されたときに実行される関数
+
+            // フォームの要素を取得
+            const form = document.getElementById('reservation-form');
+
+            // $adminのIDをフォームのURLに埋め込む
+            const adminId = {{ $admin->id }};
+            form.action = form.action + `/${adminId}`;
+
+            // フォームをサブミット（リダイレクト）
+            form.submit();
+        }
+    </script> --}}
     @endsection
 
 

@@ -10,16 +10,11 @@
       <link rel="stylesheet" href="{{ asset('css/index.css') }}">
       <style>
 
-        
-          body {
-              background-color: #f8f9fa;
-              font-family: Arial, sans-serif;
-          }
 
           .login-container {
-              border: 1px solid #007bff;
+              border: 1px solid #ffffff;
               padding: 20px;
-              margin-right: 10px;
+              margin-right: 22px;
               margin-bottom: 20px;
           }
 
@@ -34,7 +29,7 @@
           }
 
           .restaurant-img {
-              width: 100%;
+              width: 100vw;
               height: 180px;
               object-fit: cover;
               border-radius: 5px;
@@ -47,41 +42,58 @@
           }
 
           .restaurant-rating {
-              color: #f8ad1c;
+              color: #ffffff;
               font-size: 1rem;
               margin-bottom: 5px;
           }
 
           .restaurant-description {
               font-size: 0.9rem;
-              color: #007bff;
+              color: #ffffff;
           }
 
           .restaurant-link {
               text-decoration: none;
-              color: #007bff;
+              color: #ffffff;
           }
 
-          body {
-            background-image:url("image/serch-view2.jpg");
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            background-position: center;
-            background-size: cover;
-          }
-          
-          h1 {
-          color: #46aae1;
-          margin: 24px;
-          }
-          h2 {
-          color: #007bff;
-          }
-          .row{
-            transform: 
-            translate(0px,10px)
+          .container{
+                width: 100vw;
+                height: 100vh;
+                background-image: url(../image/serch-view2.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                z-index: 0;
+            }
 
-          }
+            .container::before{
+                content: '';
+                background: inherit;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: blur(5px);
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+                z-index: -1;
+            }
+
+                h1 {
+                color: #ffffff;
+                margin: 30px;
+            }
+                h2 {
+                color: #ffffff;
+            }
+            .row{
+                transform: 
+                translate(0px,10px)
+            }
       </style>
   </head>
 
@@ -89,7 +101,7 @@
 
       <div class="container mt-5">
         <div class="container mt-5">
-          <h1 class="text-center mb-4">hungry cebu</h1>          
+            <h1 class="text-center mb-4" style="margin-top: 20px;">Hungry-Cebu</h1>
           <div class="row">
               <!-- ユーザーログインと新規登録 -->
               <div class="col-md-6 col-md-offset-3">
