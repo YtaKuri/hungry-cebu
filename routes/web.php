@@ -9,7 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Middleware\AuthenticateUser;
 use App\Http\Middleware\AuthenticateAdmin;
-
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -128,3 +128,8 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
 
 
 });
+// 検索フォーム表示のルート
+// Route::get('/search', 'App\Http\Controllers\SearchController@showSearchForm')->name('search.form');
+
+// 検索結果の表示のルート
+Route::get('/search', 'App\Http\Controllers\SearchController@search')->name('search');

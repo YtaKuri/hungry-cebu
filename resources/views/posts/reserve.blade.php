@@ -24,18 +24,18 @@
             <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
                 @csrf
                 <div class="reserve-form">
-                    <label for="reservation-date">予約日</label>
+                    <label for="reservation-date">Reservation Date</label>
                     <input type="date" class="form-control" id="reservation-date" name="date" required>
                 </div>
                 <div class="reserve-form">
-                    <label for="party-size">予約人数</label>
-                    <input type="number" class="form-control" id="party-size" placeholder="予約人数を入力してください" name="people" required>
+                    <label for="party-size">Party Size</label>
+                    <input type="number" class="form-control" id="party-size" placeholder="Enter the number of people" name="people" required>
                 </div>
                 <div class="reserve-form">
-                    <label for="reservation-time">予約時間</label>
+                    <label for="reservation-time">Reservation Time</label>
                     <input type="time" class="form-control" id="reservation-time" name="time" required>
                 </div>
-                <button type="submit" class="btn btn-primary">予約する</button>
+                <button type="submit" class="btn btn-primary">Reserve</button>
             </form>
         </div>
     </main>
