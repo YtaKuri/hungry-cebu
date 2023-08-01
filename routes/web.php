@@ -37,10 +37,7 @@ Route::get('/reserve', 'App\Http\Controllers\ReserveController@create')->name('p
 Route::post('/reserve', 'App\Http\Controllers\ReserveController@store')->name('posts.store');
 Route::get('/reserve/{id}', 'App\Http\Controllers\ReserveController@show')->name('posts.show');
 
-// Route::get('/mypage', 'App\Http\Controllers\MypageController@index')->name('posts.mypage');
 Route::get('/mypage', 'App\Http\Controllers\MypageController@show')->name('posts.mypage.show');
-Route::get('/mypage/{id}/edit', 'App\Http\Controllers\MypageController@edit')->name('posts.mypage.edit');
-Route::put('/mypage/{id}', 'App\Http\Controllers\MypageController@update')->name('posts.mypage.update');
 Route::delete('/mypage/{id}', 'App\Http\Controllers\MypageController@destroy')->name('posts.mypage.destroy');
 
 
