@@ -28,7 +28,6 @@
                             @method('delete')
                             <input type='submit' value="delete" class="btn btn-danger" onclick='return confirm("Really delete?");'>
                         </form>
-                        <a href="{{ route('posts.edit', $reservation->id) }}" class="btn btn-primary">Edit</a>
                     </div>
                 </section>
                 @endforeach

@@ -10,78 +10,101 @@
       <link rel="stylesheet" href="{{ asset('css/index.css') }}">
       <style>
 
-        
-          body {
-              background-color: #f8f9fa;
-              font-family: Arial, sans-serif;
+        .text-center{
+            margin-right: 45px;
+            font-size: 35px;
+            color: orange;
+        }
+
+        .login-container {
+            border: 1px solid orange;
+            padding: 20px;
+            margin-right: 22px;
+            margin-bottom: 50px;
+            margin-top: 13px;
           }
 
-          .login-container {
-              border: 1px solid #007bff;
-              padding: 20px;
-              margin-right: 10px;
-              margin-bottom: 20px;
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
           }
 
-          .login-container h2 {
-              margin-bottom: 20px;
-              text-align: center;
+        .btn-container {
+            display: flex;
+            justify-content: space-around;
           }
 
-          .btn-container {
-              display: flex;
-              justify-content: space-around;
+        .restaurant-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
           }
 
-          .restaurant-img {
-              width: 100%;
-              height: 180px;
-              object-fit: cover;
-              border-radius: 5px;
+        .restaurant-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
           }
 
-          .restaurant-name {
-              font-size: 1.2rem;
-              font-weight: bold;
-              margin-top: 10px;
+        .restaurant-rating {
+            color: #FFFFFF;
+            font-size: 1rem;
+            margin-bottom: 5px;
           }
 
-          .restaurant-rating {
-              color: #f8ad1c;
-              font-size: 1rem;
-              margin-bottom: 5px;
+        .restaurant-description {
+            font-size: 0.9rem;
+            color: #FFFFFF;
           }
 
-          .restaurant-description {
-              font-size: 0.9rem;
-              color: #007bff;
+        .restaurant-link {
+            text-decoration: none;
+            color: #FFFFFF;
           }
 
-          .restaurant-link {
-              text-decoration: none;
-              color: #007bff;
-          }
-
-          body {
-            background-image:url("image/serch-view2.jpg");
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            background-position: center;
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-image: url(../image/serch-view2.jpg);
+            background-repeat: no-repeat;
             background-size: cover;
-          }
-          
-          h1 {
-          color: #46aae1;
-          margin: 24px;
-          }
-          h2 {
-          color: #007bff;
-          }
-          .row{
-            transform: 
-            translate(0px,10px)
+            position: relative;
+            z-index: 0;
+        }
 
-          }
+        .container::before{
+            content: '';
+            background: inherit;
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            z-index: -1;
+        }
+
+          h1 {
+            color: #FFFFFF;
+            margin: 24px;
+        }
+          h2 {
+            color: orange;
+        }
+          .row{
+            transform:
+            translate(0px,10px)
+        }
+
+        .btn{
+            background-color: orange;
+            color: #FFFFFF
+        }
       </style>
   </head>
 
@@ -89,7 +112,7 @@
 
       <div class="container mt-5">
         <div class="container mt-5">
-          <h1 class="text-center mb-4">hungry cebu</h1>          
+          <h1 class="text-center mb-4">Hungry-Cebu</h1>
           <div class="row">
               <!-- ユーザーログインと新規登録 -->
               <div class="col-md-6 col-md-offset-3">
@@ -123,7 +146,6 @@
               </div>
           </div>
       </div>
-      
 
       <!-- Custom JavaScript -->
       <script>
