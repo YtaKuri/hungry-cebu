@@ -16,7 +16,7 @@
           font-size: 36px;
           color: orange;
           font-weight: bold;
-          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
       }
 
       .subtitle{
@@ -25,16 +25,16 @@
         color: orange;
         font-size: 28px;
         font-weight: bold;
-        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+        text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
       }
 
       .login-container {
-          /* border: 2px solid orange; */
+          border: 2px solid orange;
           padding: 20px;
           margin-right: 22px;
           margin-top: 25px;
           margin-bottom: 14px;
-          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         }
 
       .login-container h2 {
@@ -43,7 +43,7 @@
           color: orange;
           font-size: 34px;
           font-weight: bold;
-          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         }
 
       .btn-container {
@@ -68,19 +68,19 @@
           color: orange;
           font-size: 1rem;
           margin-bottom: 5px;
-          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         }
 
       .restaurant-description {
           font-size: 0.9rem;
           color: orange;
-          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         }
 
       .restaurant-link {
           text-decoration: none;
           color: orange;
-          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         }
 
       .container{
@@ -116,7 +116,7 @@
 
       .btn{
           background-color: orange;
-          color: black;
+          color: white;
           margin-top: 20px;
           margin-bottom: 20px;
       }
