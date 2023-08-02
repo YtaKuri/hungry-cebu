@@ -112,7 +112,7 @@
                 <tbody>
                     @foreach ($reservations as $reservation)
                         <tr>
-                            <td>{{ $reservation->name }}</td>
+                            <td>{{ $reservation->user->name }}</td>
                             <td>{{ $reservation->date }}</td>
                             <td>{{ $reservation->time }}</td>
                             <td>{{ $reservation->people }}</td>
