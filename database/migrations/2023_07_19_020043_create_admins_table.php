@@ -22,7 +22,6 @@ class CreateAdminsTable extends Migration
             $table->string('address'); // 住所を保存する文字列型のカラム
             $table->string('password'); // パスワードを保存する文字列型のカラム
             $table->string('store_img');
-            $table->string('facebook_id');
             $table->rememberToken(); // ユーザーを"記憶"するためのトークンを保存するカラム
             $table->timestamps();
         });
