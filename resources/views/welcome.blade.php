@@ -29,7 +29,7 @@
       }
 
       .login-container {
-          border: 2px solid orange;
+          border: 1px solid orange;
           padding: 20px;
           margin-right: 22px;
           margin-top: 25px;
@@ -94,19 +94,19 @@
       }
 
       .container::before{
-          content: '';
-          background: inherit;
-          -webkit-filter: blur(5px);
-          -moz-filter: blur(5px);
-          -o-filter: blur(5px);
-          -ms-filter: blur(5px);
-          filter: blur(5px);
-          position: absolute;
-          top: -5px;
-          left: -5px;
-          right: -5px;
-          bottom: -5px;
-          z-index: -1;
+        content: '';
+        background: inherit;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        right: -10px;
+        bottom: -1px;
+        z-index: -1;
       }
 
       .row{
