@@ -48,6 +48,12 @@ class ReservationController extends Controller
         // $reservations = Reservation::all(); // すべての予約を取得
         $reservations = Reservation::orderBy('date', 'asc')->get(); 
         return view('reservations.index', ['reservations' => $reservations]);
+
+        $reservations = Reservation::with('user')->get();
+
+        return view('index', compact('reservations'));
+
+
     }
     // 予約の詳細を表示する
     public function show($id)
