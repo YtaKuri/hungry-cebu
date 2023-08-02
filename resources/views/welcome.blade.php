@@ -14,32 +14,36 @@
           margin-right: 30px;
           margin-top: 0px;
           font-size: 36px;
-          color: black;
+          color: orange;
           font-weight: bold;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
       }
 
       .subtitle{
-        margin-left: 28px;
+        margin-left: 48px;
         margin-top: 25px;
-        color: black;
+        color: orange;
         font-size: 28px;
         font-weight: bold;
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
       }
 
       .login-container {
-          border: 2px solid black;
+          /* border: 2px solid orange; */
           padding: 20px;
           margin-right: 22px;
           margin-top: 25px;
           margin-bottom: 14px;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .login-container h2 {
           margin-bottom: 20px;
           text-align: center;
-          color: black;
+          color: orange;
           font-size: 34px;
           font-weight: bold;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .btn-container {
@@ -61,19 +65,22 @@
         }
 
       .restaurant-rating {
-          color: #FFFFFF;
+          color: orange;
           font-size: 1rem;
           margin-bottom: 5px;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .restaurant-description {
           font-size: 0.9rem;
-          color: #FFFFFF;
+          color: orange;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .restaurant-link {
           text-decoration: none;
-          color: #FFFFFF;
+          color: orange;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .container{
@@ -108,8 +115,8 @@
       }
 
       .btn{
-          background-color: black;
-          color: orange;
+          background-color: orange;
+          color: black;
           margin-top: 20px;
           margin-bottom: 20px;
       }
