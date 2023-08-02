@@ -10,101 +10,109 @@
       <link rel="stylesheet" href="{{ asset('css/index.css') }}">
       <style>
 
-        .text-center{
-            margin-right: 45px;
-            font-size: 35px;
-            color: orange;
+      .text-center{
+          margin-right: 30px;
+          margin-top: 0px;
+          font-size: 36px;
+          color: black;
+          font-weight: bold;
+      }
+
+      .subtitle{
+        margin-left: 28px;
+        margin-top: 25px;
+        color: black;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .login-container {
+          border: 2px solid black;
+          padding: 20px;
+          margin-right: 22px;
+          margin-top: 25px;
+          margin-bottom: 14px;
         }
 
-        .login-container {
-            border: 1px solid orange;
-            padding: 20px;
-            margin-right: 22px;
-            margin-bottom: 50px;
-            margin-top: 13px;
-          }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-            text-align: center;
-          }
-
-        .btn-container {
-            display: flex;
-            justify-content: space-around;
-          }
-
-        .restaurant-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 5px;
-          }
-
-        .restaurant-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 10px;
-          }
-
-        .restaurant-rating {
-            color: #FFFFFF;
-            font-size: 1rem;
-            margin-bottom: 5px;
-          }
-
-        .restaurant-description {
-            font-size: 0.9rem;
-            color: #FFFFFF;
-          }
-
-        .restaurant-link {
-            text-decoration: none;
-            color: #FFFFFF;
-          }
-
-        .container{
-            width: 100vw;
-            height: 100vh;
-            background-image: url(../image/serch-view2.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            z-index: 0;
+      .login-container h2 {
+          margin-bottom: 20px;
+          text-align: center;
+          color: black;
+          font-size: 34px;
+          font-weight: bold;
         }
 
-        .container::before{
-            content: '';
-            background: inherit;
-            -webkit-filter: blur(5px);
-            -moz-filter: blur(5px);
-            -o-filter: blur(5px);
-            -ms-filter: blur(5px);
-            filter: blur(5px);
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            z-index: -1;
+      .btn-container {
+          display: flex;
+          justify-content: space-around;
         }
 
-          h1 {
-            color: #FFFFFF;
-            margin: 24px;
-        }
-          h2 {
-            color: orange;
-        }
-          .row{
-            transform:
-            translate(0px,10px)
+      .restaurant-img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 5px;
         }
 
-        .btn{
-            background-color: orange;
-            color: #FFFFFF
+      .restaurant-name {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-top: 10px;
         }
+
+      .restaurant-rating {
+          color: #FFFFFF;
+          font-size: 1rem;
+          margin-bottom: 5px;
+        }
+
+      .restaurant-description {
+          font-size: 0.9rem;
+          color: #FFFFFF;
+        }
+
+      .restaurant-link {
+          text-decoration: none;
+          color: #FFFFFF;
+        }
+
+      .container{
+          width: 100vw;
+          height: 100vh;
+          background-image: url(../image/serch-view2.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+          z-index: 0;
+      }
+
+      .container::before{
+          content: '';
+          background: inherit;
+          -webkit-filter: blur(5px);
+          -moz-filter: blur(5px);
+          -o-filter: blur(5px);
+          -ms-filter: blur(5px);
+          filter: blur(5px);
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          z-index: -1;
+      }
+
+      .row{
+          transform:
+          translate(0px,10px);
+      }
+
+      .btn{
+          background-color: black;
+          color: orange;
+          margin-top: 20px;
+          margin-bottom: 20px;
+      }
       </style>
   </head>
 
@@ -112,7 +120,8 @@
 
       <div class="container mt-5">
         <div class="container mt-5">
-          <h1 class="text-center mb-4">Hungry-Cebu</h1>
+          <h1 class="text-center mb-4">H u n g r y - C e b u</h1>
+          <h2 class="subtitle">Get a table right now!</h2>
           <div class="row">
               <!-- ユーザーログインと新規登録 -->
               <div class="col-md-6 col-md-offset-3">
