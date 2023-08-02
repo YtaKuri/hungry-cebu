@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use Illuminate\Support\Facades\Auth; 
 
 class ReservationController extends Controller
 {
@@ -45,12 +46,16 @@ class ReservationController extends Controller
     // 予約一覧ページを表示する
     public function index()
     {
-        // $reservations = Reservation::all(); // すべての予約を取得
-        $reservations = Reservation::orderBy('date', 'asc')->get(); 
+
+        $admin_id = Auth::guard('admin')->id();
+
+        // ログインしているadminのadmin_idに基づいて予約情報をフィルタリング
+        $reservations = Reservation::where('admin_id', $admin_id)
+                                   ->orderBy('date', 'asc')
+                                   ->get();    
         return view('reservations.index', ['reservations' => $reservations]);
 
         $reservations = Reservation::with('user')->get();
-
         return view('index', compact('reservations'));
 
 
