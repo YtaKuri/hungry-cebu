@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Laravel App</title>
+</head>
+<body>
+    @yield('content')
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+</body>
+</html>
+
 @section('content')
 @foreach ($stores as $store)
     <a href="{{ route('posts.show', [$store->id]) }}">

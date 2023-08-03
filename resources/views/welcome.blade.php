@@ -13,7 +13,7 @@
       .text-center{
           margin-right: 30px;
           margin-top: 0px;
-          font-size: 36px;
+          font-size: 40px;
           color: orange;
           font-weight: bold;
           text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
@@ -32,8 +32,8 @@
           border: 1px solid orange;
           padding: 20px;
           margin-right: 22px;
-          margin-top: 25px;
-          margin-bottom: 14px;
+          margin-top: 30px;
+          margin-bottom: 20px;
           text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         }
 

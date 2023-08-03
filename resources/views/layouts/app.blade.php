@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/anotherapp.css') }}" rel="stylesheet">
 
     {{-- カスタムcss --}}
     <link rel="stylesheet" href="{{ asset('css/search.css') }}">
@@ -61,13 +62,12 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <li class="nav-link dropdown-toggle">
+                                    <li class="nav-link ">
                                         <a class="nav-link" href="{{ route('home') }}">{{ __('search page') }}</a>
                                     </li>
-                                    <li class="nav-link dropdown-toggle">
+                                    <li class="nav-link ">
                                         <a class="nav-link" href="{{ route('posts.mypage') }}">{{ __('my page') }}</a>
                                     </li>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

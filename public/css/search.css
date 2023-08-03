@@ -1,10 +1,10 @@
 /* ヘッダー */
-.application-title{
+.application-title {
     font-size: 24px;
-}
-
-/* メイン */
-.content{
+  }
+  
+  /* メイン */
+  .content {
     width: 100vw;
     height: 100vh;
     background-image: url(../image/serch-view2.jpg);
@@ -12,15 +12,11 @@
     background-size: cover;
     position: relative;
     z-index: 0;
-}
-
-.content::before{
+  }
+  
+  .content::before {
     content: '';
     background: inherit;
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
     filter: blur(10px);
     position: absolute;
     top: -15px;
@@ -28,20 +24,41 @@
     right: -10px;
     bottom: -10px;
     z-index: -1;
-}
-
-.header-container{
+  }
+  
+  /* 追加: 検索バーを画面上部に持ってくる */
+  .header-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.d-flex{
-    width: 90vw;
-}
-
-#search-form{
-    margin-top: 240px;
-}
-
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
+  
+  /* 追加: 検索バーを中央に配置 */
+  .serch-restaurant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .form-inline {
+    max-width: 400px;
+  }
+  
+  .form-group {
+    margin-right: 10px;
+  }
+  
+  .btn-info {
+    background-color: orange;
+    color: white;
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  
