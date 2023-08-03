@@ -29,13 +29,21 @@ class ReservationController extends Controller
         // バリデーションを実行
         $validatedData = $request->validate($rules);
 
+        $admin_id = Auth::guard('admin')->user()->id;
+
+            // 管理者が入力した名前を取得
+         $admin_name = $request->input('admin_name');
+
         // 予約を保存
         $reservation = new Reservation;
+        $reservation->users_name = $admin_name;
         $reservation->name = $validatedData['name'];
+        $reservation->admin_id = $admin_id; // admin_idを設定
         $reservation->number = $validatedData['number'];
         $reservation->date = $validatedData['date'];
         $reservation->time = $validatedData['time'];
         $reservation->people = $validatedData['people'];
+        $reservation->user_id = null;
 
         $reservation->save();
 
