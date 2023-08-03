@@ -1,0 +1,39 @@
+/* 追加されたスタイル */
+body {
+    margin: 0;
+    padding-top: 70px; /* ヘッダーの高さ分だけコンテンツを下にずらす */
+}
+
+#app {
+    position: relative;
+}
+
+.navbar {
+    position: fixed; /* ヘッダーを画面上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* ヘッダーの背景色 */
+    z-index: 100; /* 他の要素より手前に表示する */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ヘッダーに影を追加 */
+}
+
+.application-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.nav-item{
+    padding-left: 2px;
+}
+
+.nav-link{
+    padding: 7px 0px 0px 2px;
+    font-size: 17px;
+}
+
+
+
+
+/* 以下、その他のスタイルはそのまま */

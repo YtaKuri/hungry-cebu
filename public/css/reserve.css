@@ -22,8 +22,8 @@
     font-size: 20px;
     font-family: 'Gotham SSm', sans-serif;
     color: #FFFFFF;
-    padding-left: 12px;
-    padding-top: 8px;
+    padding-left: 18px;
+    padding-top: 55px;
     position: absolute;
     top: 220px;
 }
@@ -41,7 +41,7 @@
 
 .btn{
     font-weight: bold;
-    margin: 60px 2px 0px 280px;
+    margin: 60px 2px 0px 330px;
     background-color: orange;
     color: rgb(245, 245, 247);
 }

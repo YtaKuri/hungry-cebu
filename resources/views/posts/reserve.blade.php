@@ -21,7 +21,7 @@
             </section>
         </div>
         <div class="reserve-container">
-            <form method="POST" action="{{ route('posts.store') }} " enctype="multipart/form-data">
+            <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="admin_name" value="{{ $admin->name }}">
                 <div class="reserve-form">
@@ -42,6 +42,51 @@
         </div>
     </main>
     @endsection
+
+    <script>
+        const selectElement = document.getElementById('reservation-time');
+    
+        // 開始時刻と終了時刻を設定（例：9:00 から 21:00）
+        const startTime = 9;
+        const endTime = 21;
+    
+        // 時間を30分刻みでオプションに追加
+        for (let hour = startTime; hour <= endTime; hour++) {
+            for (let minute = 0; minute < 60; minute += 30) {
+                const option = document.createElement('option');
+                const formattedHour = hour.toString().padStart(2, '0');
+                const formattedMinute = minute.toString().padStart(2, '0');
+                option.text = `${formattedHour}:${formattedMinute}`;
+                option.value = `${formattedHour}:${formattedMinute}`;
+                selectElement.appendChild(option);
+            }
+        }
+    
+        const partySizeInput = document.getElementById('party-size');
+    
+        // イベントリスナを追加して、入力値を検証する
+        partySizeInput.addEventListener('input', function() {
+            if (this.value < 1) {
+                this.value = 1; // 0以下の場合は1に設定する
+            }
+        });
+    
+        // label要素を使って入力欄をクリックしたときにフォーカスする
+        const partySizeLabel = document.querySelector('label[for="party-size"]');
+        partySizeLabel.addEventListener('click', function() {
+            partySizeInput.focus();
+        });
+    
+        const reservationDateInput = document.getElementById('reservation-date');
+    
+        // label要素を使って入力欄をクリックしたときにフォーカスする
+        const reservationDateLabel = document.querySelector('label[for="reservation-date"]');
+        reservationDateLabel.addEventListener('click', function() {
+            reservationDateInput.focus();
+        });
+    </script>
+
+
 
 
 
