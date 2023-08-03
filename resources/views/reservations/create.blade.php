@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="reservation_date">Date:</label>
-                <input type="date" id="date" name="date" class="form-control" required>
+                <input type="date" id="date" name="date" class="form-control" min="{{ date('Y-m-d') }}" required>
             </div>
             <div class="form-group">
                 <label for="time">Time:</label>
@@ -30,11 +30,19 @@
             
             <div class="form-group">
                 <label for="number_of_people">People:</label>
-                <input type="number" id="people" name="people" class="form-control" min='0' required>
+                <input type="number" id="people" name="people" class="form-control" min='1' required>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
         <a href="{{ route('reservations.index') }}" class="btn btn-secondary mt-3">Back to Reservation List</a>
     </div>
+
+    <script>
+        // 今日の日付を取得
+        const today = new Date().toISOString().split('T')[0];
+        // フォームの日付入力欄に最小値を設定
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+
 </body>
 </html>
