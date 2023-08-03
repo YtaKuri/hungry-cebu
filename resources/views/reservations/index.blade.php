@@ -111,8 +111,13 @@
                 </thead>
                 <tbody>
                     @foreach ($reservations as $reservation)
-                        <tr>
-                            <td>{{ $reservation->user->name }}</td>
+                            <td>
+                                @if ($reservation->user_id)
+                                    {{ $reservation->user->name }} {{-- user_idから取得した名前を表示 --}}
+                                @else
+                                    {{ $reservation->name }} {{-- 管理者が入力した名前を表示 --}}
+                                @endif
+                            </td>
                             <td>{{ $reservation->date }}</td>
                             <td>{{ $reservation->time }}</td>
                             <td>{{ $reservation->people }}</td>

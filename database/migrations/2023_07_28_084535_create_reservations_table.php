@@ -23,7 +23,7 @@ class CreateReservationsTable extends Migration
             $table->date('date');
             $table->time('time');
             $table->integer('people');
-            $table->string('users_name')->default('');
+            $table->string('users_name')->nullable();
             $table->string('email')->default('');
             $table->string('number')->default('');
             $table->timestamps();
