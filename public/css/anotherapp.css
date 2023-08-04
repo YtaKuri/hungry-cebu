@@ -34,6 +34,12 @@ body {
 }
 
 
+/* style.css */
+.application-title a {
+    text-decoration: none;
+    color: black;
+}
+
 
 
 /* 以下、その他のスタイルはそのまま */

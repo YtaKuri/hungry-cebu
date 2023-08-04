@@ -27,10 +27,9 @@
                 <label for="time">Time:</label>
                 <input type="time" id="time" name="time" class="form-control" required>
             </div>
-            
             <div class="form-group">
                 <label for="number_of_people">People:</label>
-                <input type="number" id="people" name="people" class="form-control" min='0' required>
+                <input type="number" id="people" name="people" class="form-control" min='1' required>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
