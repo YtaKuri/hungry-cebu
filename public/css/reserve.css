@@ -45,3 +45,8 @@
     background-color: orange;
     color: rgb(245, 245, 247);
 }
+
+.btn.btn-primary {
+    background-color: orange; /* オレンジ色に変更 */
+    color: white; /* 文字色を白に変更（オプション） */
+  }
