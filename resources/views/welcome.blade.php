@@ -11,12 +11,12 @@
       <style>
 
       .text-center{
-          margin-right: 30px;
+          margin-right: 26px;
           margin-top: 0px;
-          font-size: 40px;
+          font-size: 44px;
           color: orange;
           font-weight: bold;
-          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
       }
 
       .subtitle{
@@ -25,16 +25,17 @@
         color: orange;
         font-size: 28px;
         font-weight: bold;
-        text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
       }
 
       .login-container {
-          border: 1px solid orange;
+          border: 3px solid orange;
+          border-radius: 10px;
           padding: 20px;
           margin-right: 22px;
           margin-top: 30px;
           margin-bottom: 20px;
-          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .login-container h2 {
@@ -43,7 +44,7 @@
           color: orange;
           font-size: 34px;
           font-weight: bold;
-          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .btn-container {
@@ -68,25 +69,25 @@
           color: orange;
           font-size: 1rem;
           margin-bottom: 5px;
-          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .restaurant-description {
           font-size: 0.9rem;
           color: orange;
-          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .restaurant-link {
           text-decoration: none;
           color: orange;
-          text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+          text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
 
       .container{
           width: 100vw;
           height: 100vh;
-          background-image: url(../image/serch-view2.jpg);
+          background-image: url(../image/food-g8aabc964e_640.jpg);
           background-repeat: no-repeat;
           background-size: cover;
           position: relative;
@@ -96,11 +97,11 @@
       .container::before{
         content: '';
         background: inherit;
-        -webkit-filter: blur(10px);
-        -moz-filter: blur(10px);
-        -o-filter: blur(10px);
-        -ms-filter: blur(10px);
-        filter: blur(10px);
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
         position: absolute;
         top: -100px;
         left: -100px;
@@ -116,9 +117,10 @@
 
       .btn{
           background-color: orange;
-          color: white;
+          color: black;
           margin-top: 20px;
           margin-bottom: 20px;
+          border: 1px orange solid;
       }
       </style>
   </head>
