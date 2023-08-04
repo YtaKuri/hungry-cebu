@@ -45,8 +45,9 @@ class AdminRegisterController extends Controller
         $admin->save();
 
         if ($admin->save()) {
+            Auth::login($admin);
             // 新しいページへのルート名を指定してリダイレクト
-            return redirect()->route('reservations.index');
+            return redirect()->route('admin.login');
         } else {
             // データベース保存が失敗した場合は、エラー処理などを行う
             // 例えばエラーメッセージをフラッシュデータとして保存してリダイレクトする
